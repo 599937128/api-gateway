@@ -1,10 +1,51 @@
-package com.lv.apigateway.filter;
-
-/**
- * @program: api-gateway
- * @Date: 2019/2/26 20:09
- * @Author: Mr.lv
- * @Description:
- */
-public class TokenFilter {
-}
+//package com.lv.apigateway.filter;
+//
+//import com.netflix.zuul.ZuulFilter;
+//import com.netflix.zuul.context.RequestContext;
+//import com.netflix.zuul.exception.ZuulException;
+//import org.apache.commons.lang.StringUtils;
+//import org.springframework.http.HttpStatus;
+//import org.springframework.stereotype.Component;
+//
+//import javax.servlet.http.HttpServletRequest;
+//
+//import static org.springframework.cloud.netflix.zuul.filters.support.FilterConstants.PRE_DECORATION_FILTER_ORDER;
+//import static org.springframework.cloud.netflix.zuul.filters.support.FilterConstants.PRE_TYPE;
+//
+///**
+// * @program: api-gateway
+// * @Date: 2019/2/26 20:09
+// * @Author: Mr.lv
+// * @Description: 前置鉴权 适应前置过滤器
+// */
+//@Component
+//public class TokenFilter extends ZuulFilter {
+//    @Override
+//    public String filterType() {
+//        return PRE_TYPE;
+//    }
+//
+//    @Override
+//    public int filterOrder() {
+//        return PRE_DECORATION_FILTER_ORDER - 1;
+//    }
+//
+//    @Override
+//    public boolean shouldFilter() {
+//        return true;
+//    }
+//
+//    @Override
+//    public Object run() throws ZuulException {
+//        RequestContext requestContext = RequestContext.getCurrentContext();
+//        HttpServletRequest request = requestContext.getRequest();
+//        // 这里从url参数中获取，也可以从cookie，header里获取
+//        String token = request.getParameter("token");
+//        if (StringUtils.isEmpty(token)) {
+//            requestContext.setSendZuulResponse(false);
+//            // 设置为无权限
+//            requestContext.setResponseStatusCode(HttpStatus.UNAUTHORIZED.value());
+//        }
+//        return null;
+//    }
+//}
